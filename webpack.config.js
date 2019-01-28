@@ -49,6 +49,7 @@ module.exports = (env, argv) => {
       }),
       new CopyWebpackPlugin([
         { from: './src/assets', to: 'assets' },
+        { from: './src/resume', to: 'resume' },
       ]),
       new SpriteLoaderPlugin()
     ],
