@@ -30,11 +30,11 @@ body {
 }
 
 .header__title::before {
-  content: "<h1> ";
+  content: "<h1>";
 }
 
 .header__title::after {
-  content: " </h1>";
+  content: "</h1>";
 }
 
 .header__title {
