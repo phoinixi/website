@@ -50,6 +50,7 @@ module.exports = (env, argv) => {
       new CopyWebpackPlugin([
         { from: './src/assets', to: 'assets' },
         { from: './src/resume', to: 'resume' },
+        { from: './src/favicon.ico', to: 'favicon.ico' },
       ]),
       new SpriteLoaderPlugin()
     ],
