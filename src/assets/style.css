@@ -103,6 +103,7 @@ body {
   width: 48px;
   height: 48px;
   animation: .5s ease-in 0s 1 fadeIn;
+  margin: 0;
 }
 
 .profiles__icon--linkedin-color {
