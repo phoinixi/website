@@ -4,8 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>Francesco Esposito</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
-  <style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />  <style>
   /********************************************
 * 	reset from
 * 	http://meyerweb.com/eric/tools/css/reset/
@@ -266,10 +265,13 @@ section .location {
   border-radius: 4px;
 }
 
+.section.summary header {
+  margin-top: 1rem;
+}
+
 .main-summary {
   background: #f1f8ff;
   padding: 1.2em 1em;
-  margin-top: 1rem;
 }
 
 .main-summary p {
@@ -652,6 +654,12 @@ section .location {
   #profiles a:not(.hide-href-print)::after{
     content: " (" attr(href) ") ";
   }
+  #profiles .url .show-only-url-print {
+    display: none;
+  }
+  #profiles .url a::after {
+    content: attr(href);
+  }
   #resume {
     margin: 0.1em;
     padding: 0.1em;
@@ -664,6 +672,9 @@ section .location {
   }
   .item-count {
     display: none;
+  }
+  .company a {
+    color: #40484f;
   }
   .company::before,
   .institution::before,
@@ -686,7 +697,8 @@ section .location {
     padding-bottom: 0.15rem;
   }
   .section > section > section {
-    margin: 0 0 1em 0;
+    border-bottom: 1px solid #fdfdfd;
+    margin: .5em 0;
   }
   .section > section > section:last-of-type {
     margin: 0;
@@ -714,7 +726,7 @@ section .location {
   ul.keywords li::after,
   ul.courses li::after {
     padding: 0 0 0 0.1rem;
-    content: " |";
+    content: ", ";
   }
   ul.keywords::before,
   ul.courses::before {
@@ -722,14 +734,28 @@ section .location {
     font-weight: 600;
   }
   #skills .item {
-    width: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
+    margin: 0.3rem 0;
     padding: 0;
+  }
+  #skills .level {
+    margin: 0.1rem 0;
+    font-weight: 400;
+  }
+  #skills .keywords {
+    font-size: 0.9rem;
+    margin: 0;
   }
   .highlights {
     margin: 0.5em 0 0 0;
   }
+  .highlights > li > p {
+    margin-bottom: 0.3em;
+  }
   ul.keywords::before {
-    content: "Skills acquired: ";
+    content: "Skills: ";
+    font-size: 1rem;
   }
   #skills .keywords::before {
     content: none;
@@ -740,6 +766,12 @@ section .location {
   }
   ul.courses::before {
     content: "Major courses: ";
+    font-size: 1rem;
+  }
+  ul.keywords li,
+  ul.courses li {
+    font-size: 1rem;
+    line-height: inherit;
   }
   ul.keywords li:last-of-type::after,
   ul.courses li:last-of-type::after {
@@ -759,7 +791,7 @@ section .location {
     display: block;
     opacity: 1 !important;
   }
-  .fa-map-marker-alt:before {
+  .fa-location-dot:before {
     padding-left: 0.1em;
   }
 }
@@ -773,22 +805,23 @@ section .location {
     	<header id="header" class="clear">
     		<div>
     			<h1 class="name">Francesco Esposito</h1>
-    			<h2 class="label">Software Engineer</h2>
+    			<h2 class="label">Senior Software Engineer - Frontend focused</h2>
     		</div>
     
     		<span class="location">
     			<span class="city">Zürich,</span>
     			<span class="region">Switzerland</span>
+    			<span class="countryCode">(CH)</span>
     		</span>
     
     
     		<div id="contact">
     			<div class="email">
-    				<span class="far fa-envelope"></span>
-    				<a class="hide-href-print" href="mailto:fraesps@gmail.com">fraesps@gmail.com</a>
+    				<span class="fa-regular fa-envelope"></span>
+    				<a class="hide-href-print" href="mailto:fraesposi@icloud.com">fraesposi@icloud.com</a>
     			</div>
     			<div class="phone">
-    				<span class="fas fa-mobile-alt"></span>
+    				<span class="fa-solid fa-mobile-screen-button"></span>
     				<a class="hide-href-print" href="tel:+41788446850">+41788446850</a>
     			</div>
     		</div>
@@ -796,26 +829,29 @@ section .location {
     		<div id="profiles">
     			<div class="item">
     				<div class="username">
-    					<span class="fab fa-linkedin linkedin social"></span>
+    					<span class="fa-brands fa-linkedin linkedin social"></span>
     					<span class="url">
-    						<a target="_blank" href="https://ch.linkedin.com/in/francescoes">francescoes</a>
+    						<a target="_blank" href="https://ch.linkedin.com/in/francescoes"><span class="show-only-url-print">francescoes</span></a>
     					</span>
     				</div>
     			</div>
     			<div class="item">
     				<div class="username">
-    					<span class="fab fa-github github social"></span>
+    					<span class="fa-brands fa-github github social"></span>
     					<span class="url">
-    						<a target="_blank" href="https://www.github.com/phoinixi">phoinixi</a>
+    						<a target="_blank" href="https://www.github.com/phoinixi"><span class="show-only-url-print">phoinixi</span></a>
     					</span>
     				</div>
     			</div>
     		</div>
     	</header>
     
-    	<section class="section">
+    	<section class="section summary">
+        <header>
+          <h2 class="section-title">summary</h2>
+        </header>
     		<section class="main-summary">
-    			<div><p>I am a <strong>Software Engineer</strong> with more than 7 years of professional experience in Web Development. JavaScript is my best friend and I am passionate about coding for the browser beyond modern frameworks. I hold a Master's degree in Software Engineering from the University of Salerno (Italy). In my free time I enjoy running, travelling and cooking.</p></div>
+    			<div><p><p>I am a <strong>Senior Software Engineer</strong> with over 10 years of experience building scalable, user-focused web applications. I specialize in modern Frontend technologies, such as <strong>React</strong>, <strong>TypeScript</strong>, and advanced tooling like <strong>Webpack</strong>, <strong>Nx</strong> and <strong>Vite</strong>. I am a <strong>product-oriented</strong> person, experienced in collaborating with product owners, designers and other engineering teams. I am looking for my next opportunity in a Senior Software Engineer role where I can bring immediate value and help shape the future of the product.</p></p></div>
     		</section>
     	</section>
     
@@ -826,7 +862,7 @@ section .location {
     	<section id="skills">
     		<div class="item">
     			<h3 class="name">
-    				Front-end Development
+    				Frontend Development
     			</h3>
     			 
     			<div class="level advanced">
@@ -834,20 +870,27 @@ section .location {
     				<div class="bar"></div>
     			</div>
     			<ul class="keywords">
-    				<li>Typescript</li>
-    				<li>Javascript</li>
+    				<li>TypeScript</li>
+    				<li>React</li>
+    				<li>Redux</li>
+    				<li>Recoil</li>
+    				<li>Jotai</li>
+    				<li>Fluent UI</li>
     				<li>Angular</li>
+    				<li>Vue.js</li>
+    				<li>Svelte</li>
     				<li>Lodash</li>
-    				<li>jQuery</li>
-    				<li>HTML</li>
+    				<li>HTML5</li>
     				<li>CSS</li>
-    				<li>Bootstrap</li>
-    				<li>jest</li>
+    				<li>Sass</li>
+    				<li>Jest</li>
+    				<li>Highcharts</li>
+    				<li>D3.js</li>
     			</ul>
     		</div>
     		<div class="item">
     			<h3 class="name">
-    				Front-end tooling
+    				Tooling
     			</h3>
     			 
     			<div class="level advanced">
@@ -855,42 +898,31 @@ section .location {
     				<div class="bar"></div>
     			</div>
     			<ul class="keywords">
-    				<li>webpack</li>
-    				<li>yarn</li>
-    				<li>lerna</li>
-    				<li>prettier</li>
-    				<li>ESlint</li>
-    				<li>TSlint</li>
-    			</ul>
-    		</div>
-    		<div class="item">
-    			<h3 class="name">
-    				Version Control
-    			</h3>
-    			 
-    			<div class="level advanced">
-    				<em>Advanced</em>
-    				<div class="bar"></div>
-    			</div>
-    			<ul class="keywords">
+    				<li>Webpack</li>
+    				<li>Vite</li>
+    				<li>Nx</li>
+    				<li>Yarn</li>
+    				<li>Lerna</li>
+    				<li>ESLint</li>
     				<li>Git</li>
-    				<li>Git flow</li>
-    				<li>Github</li>
+    				<li>Docker</li>
+    				<li>Azure DevOps</li>
+    				<li>Jira</li>
     			</ul>
     		</div>
     		<div class="item">
     			<h3 class="name">
-    				Back-end Development
+    				Backend Development
     			</h3>
     			 
-    			<div class="level beginner">
-    				<em>Beginner</em>
+    			<div class="level intermediate">
+    				<em>Intermediate</em>
     				<div class="bar"></div>
     			</div>
     			<ul class="keywords">
+    				<li>Node.js</li>
+    				<li>Express</li>
     				<li>C#</li>
-    				<li>PHP Laravel</li>
-    				<li>Java</li>
     			</ul>
     		</div>
     		<div class="item">
@@ -898,17 +930,14 @@ section .location {
     				Other
     			</h3>
     			 
-    			<div class="level beginner">
-    				<em>Beginner</em>
+    			<div class="level intermediate">
+    				<em>Intermediate</em>
     				<div class="bar"></div>
     			</div>
     			<ul class="keywords">
     				<li>Data Visualization</li>
-    				<li>d3.js</li>
     				<li>Data Integration</li>
-    				<li>XSLT</li>
     				<li>Web Scraping</li>
-    				<li>Azure Pipelines</li>
     			</ul>
     		</div>
     	</section>
@@ -920,175 +949,182 @@ section .location {
     
       <section id="work">
         <section class="work-item">
+            <label for="work-item-0"></label>
     
-          <label for="work-item-0"></label>
+            <header class="clear">
+              <div class="date">
+                <span class="startDate">May 2019</span>
+                <span class="endDate">- Current</span>
+              </div>
+              <div class="position">Senior Software Engineer - frontend focused</div>
+                <span class="company">
+                  <a target="_blank" href="https://www.microsoft.com/en-us/dynamics-365/products/customer-insights">Microsoft</a>
+                </span>
+            </header>
     
-          <header class="clear">
-            <div class="date">
-              <span class="startDate">May 2019</span>
-              <span class="endDate">- Current</span>
-            </div>
-            <div class="position">Software Engineer II</div>
-            <div class="company">Microsoft</div>
-          </header>
-    
-          <span class="fas fa-map-marker-alt"></span>
-          <span class="location">Zürich, Switzerland,</span>
-          <span class="website">
-            <span class="fas fa-external-link-alt"></span>
-            <a target="_blank" href="https://dynamics.microsoft.com/en-us/ai/customer-insights/">https://dynamics.microsoft.com/en-us/ai/customer-insights/</a>
-          </span>  
+          <span class="location">
+            <span class="fa-solid fa-location-dot"></span>
+            Zürich, Switzerland
+          </span>
+     
           <ul class="keywords">
-            <li>Typescript</li>
-            <li>ReactJS</li>
+            <li>TypeScript</li>
+            <li>React</li>
+            <li>Redux</li>
+            <li>Webpack</li>
+            <li>Vite</li>
+            <li>Yarn</li>
+            <li>Lerna</li>
+            <li>Nx</li>
             <li>Fluent UI</li>
-            <li>jest</li>
-            <li>webpack</li>
+            <li>Jotai</li>
+            <li>C#</li>
           </ul>
           <div class="item" id="work-item">
-            <div class="summary"><p>Dynamics 365 Customer Insights - a Customer Data Platform. My team owns the area of data export and ecosystem integration with marketing and ad tech (connectors).</p></div>
+            <div class="summary"><p><p>Dynamics 365 Customer Insights. As a team we own data export and integration with external services.</p></p></div>
             <ul class="highlights">
-              <li><p>I built a frontend framework that allowed us to go from 3 to 30+ connectors writing only declarative TypeScript files.</p></li>
-              <li><p>Contributing to quality through test coverage increases, from 60% to 90% in 3 months.</p></li>
-              <li><p>Striving to align Customer Insights to a unified User Experience.</p></li>
-              <li><p>Collaborating with Project Managers and engineering teams across different timezones.</p></li>
+              <li><p><p>Designed and implemented the Client-side of a generative <strong>AI chatbot</strong> integrated across multiple products.</p></p></li>
+              <li><p><p>Developed a <strong>plugin framework</strong> using declarative <strong>TypeScript</strong>, enabling scalability from 3 to 50+ plugins and reducing development time significantly.</p></p></li>
+              <li><p><p>Increased code quality by boosting test coverage from 60% to 90% in 3 months.</p></p></li>
+              <li><p><p>Improved <strong>monitoring and observability</strong> with additional metrics and alerts.</p></p></li>
+              <li><p><p>Collaborated closely with designers to align user experience across the product.</p></p></li>
+              <li><p><p><strong>Mentored junior engineers</strong> and onboarded new team members.</p></p></li>
             </ul>
           </div>
         </section>
         <section class="work-item">
+            <label for="work-item-1"></label>
     
-          <label for="work-item-1"></label>
+            <header class="clear">
+              <div class="date">
+                <span class="startDate">Aug 2017</span>
+                <span class="endDate">- Apr 2019</span>
+              </div>
+              <div class="position">Senior Frontend Engineer</div>
+                <span class="company">
+                  <a target="_blank" href="https://www.extron.com">Extron Electronics</a>
+                </span>
+            </header>
     
-          <header class="clear">
-            <div class="date">
-              <span class="startDate">Aug 2017</span>
-              <span class="endDate">- Apr 2019</span>
-            </div>
-            <div class="position">Front-End Engineer</div>
-            <div class="company">Extron electronics</div>
-          </header>
-    
-          <span class="fas fa-map-marker-alt"></span>
-          <span class="location">Zürich, Switzerland,</span>
-          <span class="website">
-            <span class="fas fa-external-link-alt"></span>
-            <a target="_blank" href="https://www.extron.com">https://www.extron.com</a>
-          </span>  
+          <span class="location">
+            <span class="fa-solid fa-location-dot"></span>
+            Zürich, Switzerland
+          </span>
+     
           <ul class="keywords">
             <li>JavaScript</li>
+            <li>TypeScript</li>
             <li>Angular</li>
-            <li>webpack</li>
-            <li>docker</li>
-            <li>yarn</li>
-            <li>lerna</li>
+            <li>Webpack</li>
+            <li>Docker</li>
+            <li>Yarn</li>
+            <li>Lerna</li>
             <li>Bootstrap</li>
             <li>Sass</li>
           </ul>
           <div class="item" id="work-item">
-            <div class="summary"><p>Entwine EMP is an end-to-end software solution that helps the capture, management and playback of media files from meetings, lectures and other live events.</p></div>
+            <div class="summary"><p><p>Entwine EMP is an end-to-end software solution that helps the capture, management and playback of media files from meetings, lectures and other live events.</p></p></div>
             <ul class="highlights">
-              <li><p>Migration of 6 repositories to a <strong>monorepo</strong> powered by lerna and yarn workspaces.</p></li>
-              <li><p>Development of an admin UI, video portal and video player for the management of media files.</p></li>
-              <li><p>Working closely with the UX and product development team for the creation of <strong>responsive UI components</strong>.</p></li>
-              <li><p>Collaborating with engineering teams across different timezones.</p></li>
+              <li><p><p>Designed and implemented the admin UI, video portal, and player for efficient media file management.</p></p></li>
+              <li><p><p>Collaborated closely with designers to align user experience across the product.</p></p></li>
+              <li><p><p>Led migration of 6 repositories to a monorepo powered by Lerna and Yarn workspaces.</p></p></li>
             </ul>
           </div>
         </section>
         <section class="work-item">
+            <label for="work-item-2"></label>
     
-          <label for="work-item-2"></label>
+            <header class="clear">
+              <div class="date">
+                <span class="startDate">Feb 2016</span>
+                <span class="endDate">- Jun 2017</span>
+              </div>
+              <div class="position">Frontend Engineer</div>
+                <span class="company">
+                  <a target="_blank" href="https://www.leonteq.com">Leonteq Securities AG</a>
+                </span>
+            </header>
     
-          <header class="clear">
-            <div class="date">
-              <span class="startDate">Feb 2016</span>
-              <span class="endDate">- Jun 2017</span>
-            </div>
-            <div class="position">Front-end Engineer</div>
-            <div class="company">Leonteq Securities AG</div>
-          </header>
-    
-          <span class="fas fa-map-marker-alt"></span>
-          <span class="location">Zürich, Switzerland,</span>
-          <span class="website">
-            <span class="fas fa-external-link-alt"></span>
-            <a target="_blank" href="http://www.leonteq.com">http://www.leonteq.com</a>
-          </span>  
+          <span class="location">
+            <span class="fa-solid fa-location-dot"></span>
+            Zürich, Switzerland
+          </span>
+     
           <ul class="keywords">
             <li>JavaScript</li>
-            <li>Angularjs</li>
-            <li>Requirejs</li>
+            <li>AngularJS</li>
+            <li>RequireJS</li>
             <li>Highcharts</li>
             <li>HTML</li>
             <li>CSS</li>
             <li>Bootstrap</li>
           </ul>
           <div class="item" id="work-item">
-            <div class="summary"><p>Development and maintenance of web applications for banks and insurance companies.</p></div>
+            <div class="summary"><p><p>Leonteq Securities AG is a Swiss investment bank specialized in structured products.</p></p></div>
             <ul class="highlights">
-              <li><p>Data visualization modules for financial assets (e.g., portfolio management).</p></li>
-              <li><p>Translate jquery living style-guide in AngularJS reusable components.</p></li>
-              <li><p>Development of an Admin Portal in the insurance domain from prototype to production.</p></li>
+              <li><p><p>Developed a web application for banks and insurance companies.</p></p></li>
+              <li><p><p>Implemented data visualization modules for portfolio management.</p></p></li>
+              <li><p><p>Converted jQuery-based style guides into reusable AngularJS components.</p></p></li>
             </ul>
           </div>
         </section>
         <section class="work-item">
+            <label for="work-item-3"></label>
     
-          <label for="work-item-3"></label>
+            <header class="clear">
+              <div class="date">
+                <span class="startDate">Jul 2015</span>
+                <span class="endDate">- Jan 2016</span>
+              </div>
+              <div class="position">Frontend Engineer</div>
+                <span class="company">
+                  <a target="_blank" href="https://www.fp-robotics.com/en/">F&amp;P Personal Robotics</a>
+                </span>
+            </header>
     
-          <header class="clear">
-            <div class="date">
-              <span class="startDate">Jul 2015</span>
-              <span class="endDate">- Jan 2016</span>
-            </div>
-            <div class="position">Front-end Engineer</div>
-            <div class="company">F&amp;P Personal Robotics</div>
-          </header>
-    
-          <span class="fas fa-map-marker-alt"></span>
-          <span class="location">Zürich, Switzerland,</span>
-          <span class="website">
-            <span class="fas fa-external-link-alt"></span>
-            <a target="_blank" href="http://www.fp-robotics.com">http://www.fp-robotics.com</a>
-          </span>  
+          <span class="location">
+            <span class="fa-solid fa-location-dot"></span>
+            Zürich, Switzerland
+          </span>
+     
           <ul class="keywords">
             <li>JavaScript</li>
             <li>jQuery</li>
-            <li>Sockjs</li>
-            <li>HTML</li>
-            <li>CSS</li>
+            <li>SockJS</li>
+            <li>HTML5</li>
+            <li>CSS3</li>
             <li>Python</li>
           </ul>
           <div class="item" id="work-item">
-            <div class="summary"><p><strong>myP</strong>: browser application enabling control of P-Rob. The software platform relies on WebSockets as a communication framework and front-end has been written in jQuery and vanilla javaScript.</p></div>
+            <div class="summary"><p><p>myP: browser application enabling control of P-Rob. The software platform relies on WebSockets as a communication framework and Frontend has been written in jQuery and vanilla javaScript.</p></p></div>
             <ul class="highlights">
-              <li><p>Working in collaboration with Graphics Designers to translate and integrate beautiful design into code.</p></li>
+              <li><p><p>Created a browser-based app for personal robot control using Python, WebSockets and jQuery.</p></p></li>
             </ul>
           </div>
         </section>
         <section class="work-item">
     
-          <label for="work-item-4"></label>
+            <header class="clear">
+              <div class="date">
+                <span class="startDate">Mar 2014</span>
+                <span class="endDate">- Jun 2015</span>
+              </div>
+              <div class="position">Web Developer</div>
+                <span class="company">
+                  <a target="_blank" href="https://ethz.ch/en/industry/entrepreneurship/explore-startup-portraits-and-success-stories/exits/yourehab.html">YouRehab AG</a>
+                </span>
+            </header>
     
-          <header class="clear">
-            <div class="date">
-              <span class="startDate">Mar 2014</span>
-              <span class="endDate">- Jun 2015</span>
-            </div>
-            <div class="position">Web Developer</div>
-            <div class="company">YouRehab AG</div>
-          </header>
-    
-          <span class="fas fa-map-marker-alt"></span>
-          <span class="location">Zürich, Switzerland,</span>
-          <span class="website">
-            <span class="fas fa-external-link-alt"></span>
-            <a target="_blank" href="https://www.venturelab.swiss/YouRehab">https://www.venturelab.swiss/YouRehab</a>
-          </span>  
+          <span class="location">
+            <span class="fa-solid fa-location-dot"></span>
+            Zürich, Switzerland
+          </span>
+     
           <ul class="keywords">
             <li>JavaScript</li>
-            <li>d3js</li>
+            <li>D3.js</li>
             <li>jQuery</li>
-            <li>Angularjs</li>
+            <li>AngularJS</li>
             <li>C#</li>
             <li>PHP</li>
             <li>HTML5</li>
@@ -1096,9 +1132,9 @@ section .location {
             <li>XSLT</li>
           </ul>
           <div class="item" id="work-item">
-            <div class="summary"><p><strong>Training Planner</strong>:  Software that helps the creation and the management of video game rehabilitation plans. The Training Planner helps a physiotherapist to create customized plans for each patient.</p></div>
             <ul class="highlights">
-              <li><p>Design and development of a <strong>Data Visualization</strong> Module to show the performance and the progress of the patients in the training.</p></li>
+              <li><p><p>Developed a Training Planner for video game-based rehabilitation plans.</p></p></li>
+              <li><p><p>Designed and implemented a data visualization module to track patient progress.</p></p></li>
             </ul>
           </div>
         </section>
@@ -1111,7 +1147,6 @@ section .location {
     
       <section id="education">
         <section class="education-item">
-            <label for="education-item-0"></label>
           <header class="clear">
             <div class="date">
               <span class="startDate">
@@ -1134,11 +1169,6 @@ section .location {
             </div>
           </header>
     
-          <span class="location">
-            <span class="fas fa-map-marker-alt"></span>
-            <span class="city">Salerno</span>
-            <span class="region">Italy</span>
-          </span>
     
           <ul class="courses">
             <li>Project Management</li>
@@ -1146,15 +1176,11 @@ section .location {
             <li>Software Engineering</li>
             <li>Data Analysis</li>
             <li>Data Integration</li>
-            <li>Algorithms and Data Structures</li>
+            <li>Advanced Algorithms</li>
             <li>Compilers</li>
           </ul>
     
           <div class="item">
-            <div class='gpa'>
-              <strong> Grade:</strong> <span>Summa cum Laude</span>
-            </div>
-              <div class="summary"><p>The purpose of the <strong>Master Thesis</strong> was to perform a usability test of state of art tools about Data Visualisation. Moreover, a Data Visualisation module has been developed as part of the research.</p></div>
           </div>
         </section>
       </section>
@@ -1166,27 +1192,6 @@ section .location {
         <section id="awards">
             <section class="award-item">
                 <label for="award-item-0"></label>
-    
-              <header class="clear">
-                  <div class="date">
-                    2018
-                  </div>
-                <div class="header-left">
-                    <div class="title">
-                      Scrum Master Certification
-                    </div>
-                    <div class="awarder">
-                      Scrum Alliance
-                    </div>
-                </div>
-              </header>
-    
-              <div class="item">
-                  <div class="summary"><p>Two days of Scrum training with <a href='https://www.scrumalliance.org/community/profile/jcoplien'>James Coplien</a> in preparation to the Scrum Master certification exam.</p></div>
-              </div>
-            </section>
-            <section class="award-item">
-                <label for="award-item-1"></label>
     
               <header class="clear">
                   <div class="date">
@@ -1203,7 +1208,28 @@ section .location {
               </header>
     
               <div class="item">
-                  <div class="summary"><p>Six months full Erasmus Scholarship at University of Portsmouth. Studying abroad for the first time and having the opportunity to meet people from all over the world literally changed my life.</p></div>
+                  <div class="summary"><p><p>Full Erasmus Scholarship for six months, studying abroad and meeting people from all over the world.</p></p></div>
+              </div>
+            </section>
+            <section class="award-item">
+                <label for="award-item-1"></label>
+    
+              <header class="clear">
+                  <div class="date">
+                    2018
+                  </div>
+                <div class="header-left">
+                    <div class="title">
+                      Scrum Master Certification
+                    </div>
+                    <div class="awarder">
+                      Scrum Alliance
+                    </div>
+                </div>
+              </header>
+    
+              <div class="item">
+                  <div class="summary"><p><p>Completed two-day Scrum training (On-site) with James Coplien in preparation for certification.</p></p></div>
               </div>
             </section>
         </section>
@@ -1249,12 +1275,12 @@ section .location {
         </div>
         <div class="item">
           <h3 class="name">
-            Running
+            Pizza making
           </h3>
         </div>
         <div class="item">
           <h3 class="name">
-            Yoga
+            Padel
           </h3>
         </div>
       </section>
